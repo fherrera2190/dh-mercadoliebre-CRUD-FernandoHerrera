@@ -14,14 +14,14 @@ const controller = {
 
 	// Detail - Detail from one product
 	detail: (req, res) => {
-		// Do the magic
+		return res.render('detail')
 	},
 
 	// Create - Form to create
 	create: (req, res) => {
 		// Do the magic
 	},
-	
+
 	// Create -  Method to store
 	store: (req, res) => {
 		// Do the magic
@@ -37,7 +37,7 @@ const controller = {
 	},
 
 	// Delete - Delete one product from DB
-	destroy : (req, res) => {
+	destroy: (req, res) => {
 		// Do the magic
 	}
 };

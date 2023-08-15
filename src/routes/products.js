@@ -5,24 +5,24 @@ const router = express.Router();
 // ************ Controller Require ************
 const productsController = require('../controllers/productsController');
 
-/*** GET ALL PRODUCTS ***/ 
-router.???('/', productsController.index); 
+/*** GET ALL PRODUCTS ***/
+router.get('/', productsController.index);
 
-/*** CREATE ONE PRODUCT ***/ 
-router.???('/???/', productsController.create); 
-router.???('/', productsController.store); 
-
-
-/*** GET ONE PRODUCT ***/ 
-router.???('/:id/', productsController.detail); 
-
-/*** EDIT ONE PRODUCT ***/ 
-router.???('/:id/???', productsController.edit); 
-router.???('/:id', productsController.update); 
+/*** CREATE ONE PRODUCT ***/
+// router.post('/create/', productsController.create);
+// router.post('/', productsController.store);
 
 
-/*** DELETE ONE PRODUCT***/ 
-router.???('/:id', productsController.destroy); 
+/*** GET ONE PRODUCT ***/
+// router.GET('/:id/', productsController.detail);
+
+/*** EDIT ONE PRODUCT ***/
+// router.PUT('/:id/???', productsController.edit);
+// router.PUT('/:id', productsController.update);
+
+
+/*** DELETE ONE PRODUCT***/
+// router.delete('/:id', productsController.destroy);
 
 
 module.exports = router;
