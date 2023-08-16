@@ -2,7 +2,7 @@
  {
   "id": 1,
   "name": "Cafetera Moulinex Dolce Gusto Edited",
-  "price": 100,
+  "price": 100000,
   "discount": 50,
   "category": "visited",
   "description": "Cafetera Dolce Gusto Lumio. La cafetera Dolce Gusto Lumio es de variedad automática que ha llegado con un diseño radical al que nos tenía acostumbrados Dolce Gusto.En este post te contamos todo lo que necesitas saber sobre ella, desde sus características técnicas hasta la calidad de las cápsulas o price.",
@@ -93,7 +93,7 @@
   "id": 11,
   "name": "Parlante Inalámbrico Bose Soundtouch 10",
   "description": "Parlante Inalámbrico Bose Soundtouch 10. SoundTouch®.La manera más sencilla de reproducir música en todo su hogar de forma inalámbrica. Características. » Marca: Bose. » Modelo: SoundTouch. » Color: Negro",
-  "price": 29990,
+  "price": 29990000,
   "discount": 12,
   "image": "img-parlante-bose.jpg",
   "category": "visited"
@@ -102,7 +102,7 @@
   "id": 12,
   "name": "Home Theatre Sony Bdv-e4100",
   "description": "El sonido Surround de 5.1 canales y 1000 W proporciona un audio de verdadero impacto en los efectos especiales de películas y efectos de sonido de música y deportes. Con la tecnología Near Field Communication(NFC) podés disfrutar de Sonido One- Touch para reproducir música de forma instantánea",
-  "price": 32990,
+  "price": 32990.2,
   "discount": 0,
   "image": "img-home-theater-sony.jpg",
   "category": "visited"

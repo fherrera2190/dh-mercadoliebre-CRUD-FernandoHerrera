@@ -1,0 +1,13 @@
+<div class="container products-wrapper">
+  <div class="row">
+    <div class="col-12">
+      <h2 class="products-title"><%= title %></h2>
+    </div>
+    <!-- Show the "<%= section %>" products -->
+    <% productsShow.forEach(product=> {%>
+    <div class="col-12 col-sm-6 col-lg-3">
+      <%- include('../partials/productCard.ejs',{ ...product }) %>
+    </div>
+    <% }); %>
+  </div>
+</div>
