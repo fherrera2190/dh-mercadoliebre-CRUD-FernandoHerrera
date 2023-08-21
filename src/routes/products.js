@@ -1,7 +1,7 @@
 // ************ Require's ************
 const express = require('express');
 const router = express.Router();
-
+const upload = require('../middlewares/upload');
 // ************ Controller Require ************
 const productsController = require('../controllers/productsController');
 
@@ -18,7 +18,7 @@ router.get('/detail/:id', productsController.detail);
 
 /*** EDIT ONE PRODUCT ***/
 router.get('/edit/:id', productsController.edit);
-router.put('/edit/:id', productsController.update);
+router.put('/edit/:id', upload.single('image'), productsController.update);
 
 
 /*** DELETE ONE PRODUCT***/

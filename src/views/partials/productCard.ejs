@@ -1,7 +1,7 @@
 <section class="product-box">
   <a href="/products/detail/<%=id%>">
     <figure class="product-box_image">
-      <img src="/images/products/<%= image%>" alt="imagen de producto">
+      <img src="/images/products/<%= image||'default-image.png'%>" alt="imagen de producto">
     </figure>
     <article class="product-box_data">
       <h2>

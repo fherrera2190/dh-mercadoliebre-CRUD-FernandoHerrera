@@ -1,6 +1,5 @@
 const fs = require('fs');
 const path = require('path');
-
 const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
 let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
@@ -15,7 +14,6 @@ const controller = {
 	// Detail - Detail from one product
 	detail: (req, res) => {
 		const product = products.find(product => +req.params.id === product.id);
-		console.log(product);
 		return res.render('detail', { ...product, toThousand })
 	},
 
@@ -34,7 +32,7 @@ const controller = {
 			discount: +discount,
 			category,
 			description: description.trim(),
-			image: (image ? image : 'default-image.png')
+			image: null
 		}
 		products.push(newProduct);
 		fs.writeFileSync(productsFilePath, JSON.stringify(products, null, 5), 'utf-8')
@@ -45,7 +43,6 @@ const controller = {
 	edit: (req, res) => {
 		// Do the magic
 		const product = products.find(product => +req.params.id === product.id);
-		console.log(product);
 		return res.render('product-edit-form', {
 			...product,
 			toThousand
@@ -55,12 +52,17 @@ const controller = {
 	update: (req, res) => {
 		// Do the magic
 		const { name, price, discount, category, description } = req.body;
+		console.log(req.file);
+
+
 		const productModify = products.map(product => {
 			if (+req.params.id === product.id) {
+				req.file && fs.existsSync(`./public/images/products/${product.image}`) && fs.unlinkSync(`./public/images/products/${product.image}`);
 				product.name = name.trim();
 				product.price = +price;
 				product.discount = +discount;
 				product.category = category;
+				product.image = req.file ? req.file.filename : product.image;
 				product.description = description.trim();
 			}
 			return product
@@ -72,7 +74,7 @@ const controller = {
 	// Delete - Delete one product from DB
 	destroy: (req, res) => {
 		// Do the magic
-		 products= products.filter(product => product.id !== +req.params.id);
+		products = products.filter(product => product.id !== +req.params.id);
 		fs.writeFileSync(productsFilePath, JSON.stringify(products, null, 5), 'utf-8')
 		return res.redirect('/products');
 	}
