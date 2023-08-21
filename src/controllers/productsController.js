@@ -74,6 +74,8 @@ const controller = {
 	// Delete - Delete one product from DB
 	destroy: (req, res) => {
 		// Do the magic
+		const product = products.find(product => product.id === +req.params.id);
+		fs.existsSync(`./public/images/products/${product.image}`) && fs.unlinkSync(`./public/images/products/${product.image}`);
 		products = products.filter(product => product.id !== +req.params.id);
 		fs.writeFileSync(productsFilePath, JSON.stringify(products, null, 5), 'utf-8')
 		return res.redirect('/products');
