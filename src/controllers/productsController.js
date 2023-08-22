@@ -24,7 +24,8 @@ const controller = {
 
 	// Create -  Method to store
 	store: (req, res) => {
-		const { name, price, discount, category, description, image } = req.body;
+		console.log(req.file)
+		const { name, price, discount, category, description} = req.body;
 		let newProduct = {
 			id: products[products.length - 1].id + 1,
 			name: name.trim(),
@@ -32,7 +33,7 @@ const controller = {
 			discount: +discount,
 			category,
 			description: description.trim(),
-			image: null
+			image: req.file ? req.file.filename : null
 		}
 		products.push(newProduct);
 		fs.writeFileSync(productsFilePath, JSON.stringify(products, null, 5), 'utf-8')

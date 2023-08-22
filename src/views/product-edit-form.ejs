@@ -17,7 +17,7 @@
     <div class="col-12">
       <form action="/products/edit/<%=id %>?_method=PUT" method="POST" enctype="multipart/form-data">
         <div class="row product-detail">
-          <div class="col-12 col-md-6">
+          <div class="col-12 col-lg-6">
 
             <label for="name" class="form-label">Nombre del producto:</label>
             <input type="text" id="name" name="name" placeholder="Ej: Zapatillas Reebok" class="form-input" value="<%= name%>">
@@ -38,12 +38,13 @@
             <textarea name="description" id="description" class="form-input"><%= description %></textarea>
 
           </div>
-          <div class="col-12 col-md-6 d-flex flex-column">
+          <div class="col-12 col-lg-6 d-flex flex-column">
             <img src="/images/products/<%=image||'default-image.png' %>" class="img-thumbnail" alt="">
             <label for="image" class="action-button edit">Cambiar la imagen</label>
             <input hidden class="form-control" type="file" id="image" name="image">
           </div>
-          <div class="col-12">
+          <div class="col-12 mt-5 d-flex justify-content-center justify-content-lg-end">
+              <a href="/" class="cancel-button mr-5">Cancelar</a>
             <button type="submit" class="buy-now-button">Guardar producto</button>
           </div>
         </div>
